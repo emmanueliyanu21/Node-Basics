@@ -2,22 +2,24 @@ const readline = require('readline');
 const util = require('util');
 const http = require('http')
 
-// Excercise 1
-// const RL = readline.createInterface(process.stdin, process.stdout);
-// RL.question('What is your local name? ', (name) => {
-//     RL.setPrompt(`${name} how old are you `);
-//     RL.prompt();
-//     RL.on('line', (age) => {
-//         if (age < 18) {
-//             util.log(`${name.trim()} because you are ${age} years old, you cannot proceed`);
-//             RL.close();
-//         } else {
-//             util.log(`${name.trim()} since you are ${age}, you can now enjoy our services`);
-//             RL.close();
-//         }
-//     })
-// });
 
+
+// Excercise 1
+const RL = readline.createInterface(process.stdin, process.stdout);
+RL.question('What is your local name? ', (name) => {
+    RL.setPrompt(`${name} how old are you `);
+    RL.prompt();
+    RL.on('line', (age) => {
+        const ages = 18 - age
+        if (age < 18) {
+            util.log(`${name.trim()} because you are ${age} years old, ${ages} you cannot proceed`);
+            RL.close();
+        } else {
+            util.log(`${name.trim()} since you are ${age}, you can now enjoy our services`);
+            RL.close();
+        }
+    })
+});
 
 // The node.js "util" module provides some functions to print formatted strings as well as some 'utility' functions that are helpful for debugging purposes.Use require('util') to access these functions
 

@@ -14,7 +14,6 @@ app.post('/post', (req, res) => {
     console.log(`its working`); 
 })
 
-
 app.listen(3400)
 console.log('listening on port 3400')
 
